@@ -27,3 +27,8 @@ about {
 .deskss {
   text-align: center;
 }
+
+.center {
+  margin-left: 450px;
+  margin-right: 450px;
+}
