@@ -203,12 +203,32 @@
         <span class="fs-4 fw-bold" style="color: #bc7100">Hair</span>
         <span class="fs-4 fw-bold" style="color: #bc7100">Gallery</span>
       </div>
-      <div class="d-flex justify-content-center">
-        <a class="btn rounded-3 btn-sm " style= "align-items:center ;justify-content:center ;display:flex; width: 15rem; height:3rem; background-color: #bc7100; color: white; text-align: center" href="#" role="button">
-        <input type="image" src="{{ URL::asset('assets/images/logo.png')}}" alt="" height="20" width="20" style=" margin-right: 5px" />
-        <span>Hubungi kami</span>
-      </a>
-        
+
+      <div class="container" >
+        <div class="row align-items-center" style="text-align: center">
+          <div class="col">
+            <img src="{{ URL::asset('assets/images/gambar1.jpeg') }}" class="rounded-3" alt="" width="200px" height="300px" /></div>
+          <div class="col">
+            <div class="text-center" style="margin-top:5rem">
+              <p>Punya pertanyaan atau ingin order?</p>
+              <div class="d-flex justify-content-center">
+                <a class="btn rounded-3 btn-sm " style= "align-items:center ;justify-content:center ;display:flex; width: 15rem; height:3rem; background-color: #bc7100; color: white; text-align: center" href="#" role="button">
+                <input type="image" src="{{ URL::asset('assets/images/logo.png')}}" alt="" height="20" width="20" style=" margin-right: 5px" />
+                <span class="fw-bold">Hubungi kami</span>
+                </a>
+              </div>
+              <div class="d-flex justify-content-center mt-4">
+                <a class="btn rounded-3 btn-sm " style= "align-items:center ;justify-content:center ;display:flex; width: 15rem; height:3rem; background-color: #bc7100; color: white; text-align: center" href="#" role="button">
+                <input type="image" src="{{ URL::asset('assets/images/logo.png')}}" alt="" height="20" width="20" style=" margin-right: 5px" />
+                <span class="fw-bold">Hubungi kami</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <img src="{{ URL::asset('assets/images/gambar1.jpeg') }}" class="rounded-3" alt="" width="200px" height="300px" /></div>
+          
+        </div>
       </div>
     </div>
   </body>
