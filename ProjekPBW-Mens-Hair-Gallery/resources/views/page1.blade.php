@@ -203,6 +203,13 @@
         <span class="fs-4 fw-bold" style="color: #bc7100">Hair</span>
         <span class="fs-4 fw-bold" style="color: #bc7100">Gallery</span>
       </div>
+      <div class="d-flex justify-content-center">
+        <a class="btn rounded-3 btn-sm " style= "align-items:center ;justify-content:center ;display:flex; width: 15rem; height:3rem; background-color: #bc7100; color: white; text-align: center" href="#" role="button">
+        <input type="image" src="{{ URL::asset('assets/images/logo.png')}}" alt="" height="20" width="20" style=" margin-right: 5px" />
+        <span>Hubungi kami</span>
+      </a>
+        
+      </div>
     </div>
   </body>
 </html>
