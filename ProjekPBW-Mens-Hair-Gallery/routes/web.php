@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard');
+});
+
+Auth::routes([
+    'register' => false
+]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'dashboard', ' middleware' => ['auth']], function () {
+    Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard.index');
+});
