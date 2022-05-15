@@ -12,30 +12,30 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="padding-left: 6rem">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ URL('/home')}}">
           <img src="{{ URL::asset('assets/images/logo.png') }}" alt="" height="50" width="50" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbar-nav">
+        <div class="collapse navbar-collapse fw-bold" id="navbar-nav" style="padding-left: 3rem;">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+            <li class="nav-item active me-3">
+              <a class="nav-link" aria-current="page" href="{{ URL('/home')}}">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link" href="#">About</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link" href="#">Hairstyle</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link" href="#">Product</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
@@ -46,6 +46,7 @@
         </div>
       </div>
     </nav>
+
 
     <style>
     .h1 {
@@ -138,7 +139,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center" style="margin-left: 40rem">
-        <a class="btn rounded-pill btn-sm" style="width: 8rem; background-color: #bc7100; color: white; text-align: center" href="#" role="button">Selengkapnya</a>
+        <a class="btn rounded-pill btn-sm" style="width: 8rem; background-color: #bc7100; color: white; text-align: center" href="{{ URL('/')}}" role="button">Selengkapnya</a>
       </div>
     </div>
     <div class="container-fluid" style="padding-top: 50px; height: 900px; background-color: #343434">
@@ -192,7 +193,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-center" style="margin-left: 70rem">
-          <a class="btn rounded-pill btn-sm" style="width: 8rem; background-color: #bc7100; color: white; text-align: center" href="#" role="button">Selengkapnya</a>
+          <a class="btn rounded-pill btn-sm" style="width: 8rem; background-color: #bc7100; color: white; text-align: center" href="{{ URL('/product')}}" role="button">Selengkapnya</a>
         </div>
       </div>
     </div>
