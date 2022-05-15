@@ -54,6 +54,10 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- my-dashboard -->
     <script src="{{ asset('vendor/my-dashboard/js/dashboard.js') }}"></script>
+    @include('sweetalert::alert')
+    {{-- javasccript:internal --}}
+    @stack('javascript-internal')
+    @stack('javascript-external')
 </body>
 
 </html>

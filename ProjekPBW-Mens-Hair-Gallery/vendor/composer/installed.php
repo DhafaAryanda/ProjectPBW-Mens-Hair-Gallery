@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e3b2a8bd192612c6ef0d8534bc014dc8179dfbad',
+        'reference' => '5a0c47f986f86c52f875a76c9cdf1c02203e4462',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -38,6 +38,15 @@
             'install_path' => __DIR__ . '/../dflydev/dot-access-data',
             'aliases' => array(),
             'reference' => '0992cc19268b259a39e86f296da5f0677841f42c',
+            'dev_requirement' => false,
+        ),
+        'diglactic/laravel-breadcrumbs' => array(
+            'pretty_version' => 'v7.2.0',
+            'version' => '7.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../diglactic/laravel-breadcrumbs',
+            'aliases' => array(),
+            'reference' => '309ec597d047b763d1df3c5113a3932cc771500f',
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
@@ -92,7 +101,7 @@
             'install_path' => __DIR__ . '/../facade/ignition-contracts',
             'aliases' => array(),
             'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'fakerphp/faker' => array(
             'pretty_version' => 'v1.19.0',
@@ -358,6 +367,15 @@
                 0 => 'v9.11.0',
             ),
         ),
+        'intervention/image' => array(
+            'pretty_version' => '2.7.1',
+            'version' => '2.7.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/image',
+            'aliases' => array(),
+            'reference' => '744ebba495319501b873a4e48787759c72e3fb8c',
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -379,7 +397,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e3b2a8bd192612c6ef0d8534bc014dc8179dfbad',
+            'reference' => '5a0c47f986f86c52f875a76c9cdf1c02203e4462',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -798,6 +816,15 @@
             'install_path' => __DIR__ . '/../ramsey/uuid',
             'aliases' => array(),
             'reference' => '8505afd4fea63b81a85d3b7b53ac3cb8dc347c28',
+            'dev_requirement' => false,
+        ),
+        'realrashid/sweet-alert' => array(
+            'pretty_version' => 'v5.0.0',
+            'version' => '5.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../realrashid/sweet-alert',
+            'aliases' => array(),
+            'reference' => '5cf4a41631cf74efecb5e44d05eca02a2aa8d7e1',
             'dev_requirement' => false,
         ),
         'rhumsaa/uuid' => array(
@@ -1248,6 +1275,15 @@
             'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
             'aliases' => array(),
             'reference' => 'da444caae6aca7a19c0c140f68c6182e337d5b1c',
+            'dev_requirement' => false,
+        ),
+        'unisharp/laravel-filemanager' => array(
+            'pretty_version' => 'v2.4.1',
+            'version' => '2.4.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../unisharp/laravel-filemanager',
+            'aliases' => array(),
+            'reference' => 'c1ee624a35a1f14503148437500c4a7837cb0c5f',
             'dev_requirement' => false,
         ),
         'vlucas/phpdotenv' => array(

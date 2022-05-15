@@ -1,4 +1,26 @@
 <?php return array (
+  'diglactic/laravel-breadcrumbs' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Diglactic\\Breadcrumbs\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Breadcrumbs' => 'Diglactic\\Breadcrumbs\\Breadcrumbs',
+    ),
+  ),
+  'intervention/image' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Intervention\\Image\\ImageServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -41,6 +63,17 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'realrashid/sweet-alert' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
+    ),
+  ),
   'spatie/laravel-ignition' => 
   array (
     'providers' => 
@@ -50,6 +83,16 @@
     'aliases' => 
     array (
       'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
+    ),
+  ),
+  'unisharp/laravel-filemanager' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider',
+    ),
+    'aliases' => 
+    array (
     ),
   ),
 );
