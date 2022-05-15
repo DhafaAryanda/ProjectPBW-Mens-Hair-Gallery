@@ -26,3 +26,7 @@ Route::get('/product', function () {
     return view('product');
 });
 
+Route::get('/hairstyle', function () {
+    return view('hairstyle');
+});
+

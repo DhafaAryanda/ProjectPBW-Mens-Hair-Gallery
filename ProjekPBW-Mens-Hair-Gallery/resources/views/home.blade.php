@@ -139,7 +139,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center" style="margin-left: 40rem">
-        <a class="btn rounded-pill btn-sm" style="width: 8rem; background-color: #bc7100; color: white; text-align: center" href="{{ URL('/')}}" role="button">Selengkapnya</a>
+        <a class="btn rounded-pill btn-sm" style="width: 8rem; background-color: #bc7100; color: white; text-align: center" href="{{ URL('/hairstyle')}}" role="button">Selengkapnya</a>
       </div>
     </div>
     <div class="container-fluid" style="padding-top: 50px; height: 900px; background-color: #343434">
