@@ -13,11 +13,22 @@ class Post extends Model
         "slug",
         "thumbnail",
         "description",
+        "status",
         "user_id",
     ];
 
-    public function FunctionName(Type $var = null)
+    public function scopeSearch($query, $title)
     {
-        # code...
+        return $query->where('title', 'LIKE', "%{$title}%");
+    }
+
+    public function scopePublish($query)
+    {
+        return $query->where('status', "publish");
+    }
+
+    public function scopeDraft($query)
+    {
+        return $query->where('status', "draft");
     }
 }

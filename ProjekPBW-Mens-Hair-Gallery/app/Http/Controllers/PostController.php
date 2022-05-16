@@ -17,10 +17,18 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        $statusSelected = in_array($request->get('status'), ['publish', 'draft']) ? $request->get('status') : "publish";
+        $posts = $statusSelected == "publish" ? Post::publish() : Post::draft();
+        if ($request->get('keyword')) {
+            $posts->search($request->get('keyword'));
+        }
+        return view('posts.index', [
+            'posts' => $posts->paginate(2)->withQueryString(),
+            'statuses' => $this->statuses(),
+            'statusSelected' => $statusSelected
+        ]);
     }
 
     /**
@@ -30,7 +38,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create', ['statuses' => $this->statuses()]);
     }
 
     /**
@@ -48,6 +56,7 @@ class PostController extends Controller
                 'slug' => 'required|string|unique:posts,slug',
                 'thumbnail' => 'required',
                 'description' => 'required|string|max:240',
+                'status' => 'required'
             ],
             [],
             $this->attributes()
@@ -64,6 +73,7 @@ class PostController extends Controller
                 "slug" => $request->slug,
                 "thumbnail" => parse_url($request->thumbnail)['path'],
                 "description" => $request->description,
+                "status" => $request->status,
                 "user_id" => Auth::user()->id,
             ]);
 
@@ -104,7 +114,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         return view('posts.edit', [
-            'post' => $post
+            'post' => $post,
+            'statuses' => $this->statuses(),
         ]);
     }
 
@@ -124,6 +135,7 @@ class PostController extends Controller
                 'slug' => 'required|string|unique:posts,slug,' . $post->id,
                 'thumbnail' => 'required',
                 'description' => 'required|string|max:240',
+                'status' => 'required'
             ],
             [],
             $this->attributes()
@@ -140,6 +152,7 @@ class PostController extends Controller
                 "slug" => $request->slug,
                 "thumbnail" => parse_url($request->thumbnail)['path'],
                 "description" => $request->description,
+                "status" => $request->status,
                 "user_id" => Auth::user()->id,
             ]);
 
@@ -189,6 +202,14 @@ class PostController extends Controller
         }
     }
 
+    private function statuses()
+    {
+        return [
+            'draft' => 'Draft',
+            'publish' => 'Publish',
+        ];
+    }
+
     private function attributes()
     {
         return [
@@ -196,6 +217,7 @@ class PostController extends Controller
             'slug' => 'slug',
             'thumbnail' => 'thumbnail',
             'description' => 'description',
+            'status' => 'status',
         ];
     }
 }

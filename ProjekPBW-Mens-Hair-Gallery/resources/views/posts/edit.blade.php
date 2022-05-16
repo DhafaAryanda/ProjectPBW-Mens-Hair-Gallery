@@ -86,6 +86,24 @@
                                </span>
                             @enderror
                       </div>
+                      <!-- status -->
+                      <div class="form-group">
+                        <label for="select_post_status" class="font-weight-bold">
+                           Status
+                        </label>
+                        <select id="select_post_status" name="status" class="custom-select @error('status') is-invalid @enderror">
+                           @foreach ($statuses as $key => $value)
+                             <option value="{{ $key }}" {{ old('status', $post->status) == $key ? 'selected' : null }}>{{ $value }}</option>
+                           @endforeach
+                        </select>
+                        @error('status')
+                           <span class="invalid-feedback">
+                              <strong>
+                                 {{ $message }}
+                              </strong>
+                           </span>
+                        @enderror
+                     </div>
                    </div>
                 </div>
                 <div class="row">

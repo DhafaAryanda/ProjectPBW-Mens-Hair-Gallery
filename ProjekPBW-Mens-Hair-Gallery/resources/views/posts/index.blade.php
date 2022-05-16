@@ -14,11 +14,28 @@ Posts
        <div class="card">
           <div class="card-header">
              <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                    <form action="" method="GET" class="form-inline form-row">
+                      {{-- Filter:status --}}
+                     <div class="col">
+                        <div class="input-group mx-1">
+                           <label class="font-weight-bold mr-2">Status</label>
+                           <select name="status" class="custom-select">
+                              @foreach ($statuses as $value => $label)
+                                 <option value="{{ $value }}" {{ $statusSelected == $value ? 'selected' : null }}>
+                                    {{ $label }}
+                                 </option>
+                              @endforeach
+                           </select>
+                           <div class="input-group-append">
+                              <button class="btn btn-primary" type="submit">Apply</button>
+                           </div>
+                        </div>
+                     </div>
+                      {{-- Filter:search --}}
                       <div class="col">
                          <div class="input-group mx-1">
-                            <input name="keyword" type="search" class="form-control" placeholder="Search for posts">
+                            <input name="keyword" type="search" class="form-control" placeholder="Search for posts" value="{{ request()->get('keyword') }}">
                             <div class="input-group-append">
                                <button class="btn btn-primary" type="submit">
                                   <i class="fas fa-search"></i>
@@ -28,7 +45,7 @@ Posts
                       </div>
                    </form>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                    <a href="{{ route('posts.create') }}" class="btn btn-primary float-right" role="button">
                       Add new
                       <i class="fas fa-plus-square"></i>
@@ -73,6 +90,11 @@ Posts
                 @endforelse
              </ul>
           </div>
+          @if ($posts->hasPages())
+            <div class="card-footer">
+               {{ $posts->links('vendor.pagination.bootstrap-4') }}
+            </div>
+          @endif
        </div>
     </div>
   </div>

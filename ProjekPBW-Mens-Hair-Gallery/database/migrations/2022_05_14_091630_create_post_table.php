@@ -19,10 +19,11 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('thumbnail');
             $table->string('description', 260);
+            $table->enum('status', ['publish', 'draft']);
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelet('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
