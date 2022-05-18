@@ -64,7 +64,7 @@
     <div class="container-fluid" style="height: 120px; background-image: url(assets/images/background3.jpg)">
       <?PHP
         
-        echo "<h4 class='h4'>Product</h4>";
+        echo "<h4 class='h4'>Rekomendasi</h4>";
         ?>
     </div>
     <div class="container-fluid" style="padding-bottom:2rem; padding-top: 80px; height: auto; background-color: #343434">
