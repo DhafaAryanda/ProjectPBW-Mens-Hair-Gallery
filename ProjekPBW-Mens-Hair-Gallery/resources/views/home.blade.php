@@ -232,7 +232,7 @@
         </div>
       </div>
 
-      <div class="container" style="margin-top: 5rem">
+      <div class="container" style="margin-top: 10rem">
         <h6 style="text-align: center; font-weight:bold">Ikuti Kami</h6>
         <div class="container d-flex justify-content-center rounded-3" style="background-color:#bc7100; width:20rem; padding:10px">
           <a  href="https://www.facebook.com"><img src="{{ URL::asset('assets/images/facebook.png') }}" alt="" style=" width: 40px; margin-right:10px; margin-left:10px"></a>
