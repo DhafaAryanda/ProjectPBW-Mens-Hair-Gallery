@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/my-auth/css/auth.css') }}">
 </head>
 
-<body class="bg-primary">
+<body style="background-color: #343434">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>

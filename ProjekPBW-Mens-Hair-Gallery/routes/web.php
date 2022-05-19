@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HairstyleController::class, 'hairstyle'])->name('blog.hairstyle');
+Route::get('/produk', [\App\Http\Controllers\HairstyleController::class, 'product'])->name('blog.product');
 
 Auth::routes([
     'register' => false
@@ -24,6 +25,7 @@ Route::group(['prefix' => 'dashboard', ' middleware' => ['web', 'auth']], functi
     Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard.index');
     //posts
     Route::resource('/posts', \App\Http\Controllers\PostController::class);
+    Route::resource('/products', \App\Http\Controllers\ProductController::class);
     //file manager
     Route::group(['prefix' => 'filemanager'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -41,4 +43,3 @@ Route::get('/product', function () {
 Route::get('/hairstyle', function () {
     return view('hairstyle');
 });
-

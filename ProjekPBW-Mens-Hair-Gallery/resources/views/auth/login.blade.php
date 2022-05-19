@@ -26,8 +26,8 @@ Login
         @enderror
     </div>
     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-        <a class="small" href="#">Forgot Password?</a>
-        <button class="btn btn-primary px-4" type="submit">Login</button>
+        <a class="small" href="#" style="color: #356623">Forgot Password?</a>
+        <button class="btn text-white px-4" type="submit" style="background-color: #356623">Login</button>
     </div>
 </form>
 @endsection

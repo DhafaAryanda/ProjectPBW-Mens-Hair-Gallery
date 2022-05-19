@@ -1,11 +1,11 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Hairstyles post
+    Products post
 @endsection
 
 @section('breadcrumbs')
-    {{ Breadcrumbs::render('posts') }}
+    {{-- {{ Breadcrumbs::render('posts') }} --}}
 @endsection
 
 @section('content')
@@ -37,7 +37,7 @@
                                 <div class="col">
                                     <div class="input-group mx-1">
                                         <input name="keyword" type="search" class="form-control"
-                                            placeholder="Search for posts" value="{{ request()->get('keyword') }}">
+                                            placeholder="Search for product" value="{{ request()->get('keyword') }}">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="submit">
                                                 <i class="fas fa-search"></i>
@@ -48,7 +48,7 @@
                             </form>
                         </div>
                         <div class="col-md-6">
-                            <a href="{{ route('posts.create') }}" class="btn btn-primary float-right" role="button">
+                            <a href="{{ route('products.create') }}" class="btn btn-primary float-right" role="button">
                                 Add new
                                 <i class="fas fa-plus-square"></i>
                             </a>
@@ -58,29 +58,33 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <!-- list post -->
-                        @forelse ($posts as $post)
+                        @forelse ($products as $product)
                             <div class="card my-2">
                                 <div class="card-body">
                                     <h5>
-                                        {{ $post->title }}
+                                        {{ $product->title }}
                                     </h5>
                                     <p>
-                                        {{ $post->description }}
+                                        {{ $product->description }}
+                                    </p>
+                                    <p>
+                                        {{ $product->price }}
                                     </p>
                                     <div class="float-right">
                                         <!-- detail -->
-                                        <a href="{{ route('posts.show', ['post' => $post]) }}"
+                                        <a href="{{ route('products.show', ['product' => $product]) }}"
                                             class="btn btn-sm btn-primary" role="button">
                                             <i class="fas fa-eye"></i>
                                         </a>
                                         <!-- edit -->
-                                        <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-sm btn-info"
-                                            role="button">
+                                        <a href="{{ route('products.edit', ['product' => $product]) }}"
+                                            class="btn btn-sm btn-info" role="button">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <!-- delete -->
                                         <form class="d-inline" role="alert"
-                                            action="{{ route('posts.destroy', ['post' => $post]) }}" method="POST">
+                                            action="{{ route('products.destroy', ['product' => $product]) }}"
+                                            method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">
@@ -95,9 +99,9 @@
                         @endforelse
                     </ul>
                 </div>
-                @if ($posts->hasPages())
+                @if ($products->hasPages())
                     <div class="card-footer">
-                        {{ $posts->links('vendor.pagination.bootstrap-4') }}
+                        {{ $products->links('vendor.pagination.bootstrap-4') }}
                     </div>
                 @endif
             </div>

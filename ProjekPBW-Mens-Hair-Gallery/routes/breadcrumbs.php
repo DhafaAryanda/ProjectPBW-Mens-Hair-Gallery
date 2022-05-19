@@ -36,8 +36,12 @@ Breadcrumbs::for('edit_post', function ($trail, $post) {
     $trail->push('Edit', route('posts.edit', ['post' => $post]));
     $trail->push($post->title, route('posts.edit', ['post' => $post]));
 });
-// Home > Blog > [Category]
-// Breadcrumbs::for('category', function (BreadcrumbTrail $trail, $category) {
-//     $trail->parent('blog');
-//     $trail->push($category->title, route('category', $category));
-// });
+
+Breadcrumbs::for('blog', function ($trail) {
+    $trail->push('Home', route('blog.hairstyle'));
+});
+
+Breadcrumbs::for('blog_hairstyle', function ($trail) {
+    $trail->parent('blog');
+    $trail->push('Hairstyle', route('blog.hairstyle'));
+});
