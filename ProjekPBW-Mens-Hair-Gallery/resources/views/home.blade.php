@@ -231,6 +231,25 @@
           
         </div>
       </div>
+
+      <div class="container" style="margin-top: 10rem">
+        <h6 style="text-align: center; font-weight:bold">Ikuti Kami</h6>
+        <div class="container d-flex justify-content-center rounded-3" style="background-color:#bc7100; width:20rem; padding:10px">
+          <a  href="https://www.facebook.com"><img src="{{ URL::asset('assets/images/facebook.png') }}" alt="" style=" width: 40px; margin-right:10px; margin-left:10px"></a>
+          <a  href="https://www.instagram.com"><img src="{{ URL::asset('assets/images/instagram.png') }}" alt="" style="width: 40px; margin-right:10px; margin-left:10px"></a>
+          <a  href="https://www.twitter.com"><img src="{{ URL::asset('assets/images/twitter.png') }}" alt="" style="width: 40px; margin-right:10px; margin-left:10px"></a>
+          <a  href="https://www.tiktok.com"><img src="{{ URL::asset('assets/images/tiktok.png') }}" alt="" style="width: 40px; margin-right:10px; margin-left:10px"></a>
+        </div>
+
+        </div>
+      </div>
     </div>
+    <footer class="text-center" style="background-color: #356623; color: white; padding: 10px">
+      <h6>Copyright 2022 | All Rights Reserved Men Hair Gallery</h6>
+    </footer>
+  
+
+  
+  
   </body>
 </html>

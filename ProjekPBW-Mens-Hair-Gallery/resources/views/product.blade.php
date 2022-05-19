@@ -71,7 +71,7 @@
       <div class="container">
         <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
           <div class="col">
-            <div class="card" style="width: 18rem; margin-bottom: 80px">
+            <div class="card" style="width: 18rem; margin-bottom: 80px;">
               <img src="{{ URL::asset('assets/images/pomade1.jpg') }}" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>

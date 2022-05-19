@@ -43,3 +43,8 @@ Route::get('/product', function () {
 Route::get('/hairstyle', function () {
     return view('hairstyle');
 });
+
+   
+Route::get('/rekomendasi', function () {
+    return view('rekomendasi');
+});
