@@ -13,10 +13,9 @@
 
     <div class="container" style=" background-color: #343434">
         <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-            <div class="col">
+            <div class="col pt-5 pb-4">
                 @forelse ($products as $product)
-                    <div class="card" style="width: 18rem; margin-bottom: 80px;">
-
+                    <div class="card text-center" style="width: 18rem; margin-bottom: 80px;">
                         @if (file_exists(public_path($product->thumbnail)))
                             <img class="card-img-top" src="{{ asset($product->thumbnail) }}"
                                 alt="{{ $product->title }}" style="width: 100%; height:15vw; object-fit:cover">
@@ -26,8 +25,9 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->title }}</h2>
                                 <p class="card-text">{{ $product->description }}</p>
-                                <a class="btn disabled"
-                                    style="background-color: #bc7100; color: white">{{ $product->price }}</a>
+                                <p class="btn disabled" style="background-color: #bc7100; color: white;opacity:1">
+                                    @currency($product->price)
+                                </p>
                         </div>
                     </div>
                 @empty
