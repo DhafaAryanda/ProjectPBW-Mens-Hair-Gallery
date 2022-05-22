@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HairstyleController::class, 'hairstyle'])->name('blog.hairstyle');
+Route::get('/hair', [\App\Http\Controllers\HairstyleController::class, 'hairstyle'])->name('blog.hairstyle');
 Route::get('/produk', [\App\Http\Controllers\HairstyleController::class, 'product'])->name('blog.product');
+Route::get('/rekom', [\App\Http\Controllers\HairstyleController::class, 'rekomendasi'])->name('blog.rekomendasi');
+Route::get('/', [\App\Http\Controllers\HairstyleController::class, 'home'])->name('blog.home');
 
 Auth::routes([
     'register' => false
@@ -30,21 +32,4 @@ Route::group(['prefix' => 'dashboard', ' middleware' => ['web', 'auth']], functi
     Route::group(['prefix' => 'filemanager'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/product', function () {
-    return view('product');
-});
-
-Route::get('/hairstyle', function () {
-    return view('hairstyle');
-});
-
-   
-Route::get('/rekomendasi', function () {
-    return view('rekomendasi');
 });

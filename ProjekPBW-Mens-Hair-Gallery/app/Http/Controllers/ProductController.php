@@ -25,7 +25,7 @@ class ProductController extends Controller
             $products->search($request->get('keyword'));
         }
         return view('products.index', [
-            'products' => $products->paginate(2)->withQueryString(),
+            'products' => $products->paginate()->withQueryString(),
             'statuses' => $this->statuses(),
             'statusSelected' => $statusSelected
         ]);
@@ -55,7 +55,7 @@ class ProductController extends Controller
                 'title' => 'required|string|max:60',
                 'slug' => 'required|string|unique:products,slug',
                 'thumbnail' => 'required',
-                'description' => 'required|string|max:240',
+                'description' => 'required|string|max:260',
                 'price' => 'required|string|max:30',
                 'status' => 'required'
             ],
@@ -136,7 +136,7 @@ class ProductController extends Controller
                 'title' => 'required|string|max:60',
                 'slug' => 'required|string|unique:products,slug,' . $product->id,
                 'thumbnail' => 'required',
-                'description' => 'required|string|max:240',
+                'description' => 'required|string|max:260',
                 'price' => 'required|string|max:30',
                 'status' => 'required'
             ],

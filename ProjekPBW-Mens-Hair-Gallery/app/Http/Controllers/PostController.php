@@ -25,7 +25,7 @@ class PostController extends Controller
             $posts->search($request->get('keyword'));
         }
         return view('posts.index', [
-            'posts' => $posts->paginate(2)->withQueryString(),
+            'posts' => $posts->paginate()->withQueryString(),
             'statuses' => $this->statuses(),
             'statusSelected' => $statusSelected
         ]);
