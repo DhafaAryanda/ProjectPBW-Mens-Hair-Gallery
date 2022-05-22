@@ -8,7 +8,7 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
     style="padding-left: 6rem; background-color: #356623; padding-bottom: 4px">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ URL('/home') }}">
+        <a class="navbar-brand" href="{{ route('blog.home') }}">
             <img src="{{ URL::asset('assets/images/logo_mhg.png') }}" alt="" height="40" width="70" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -32,6 +32,9 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
                 </li>
                 <li class="nav-item me-3">
                     <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href={{ route('blog.rekomendasi') }}>Rekomendasi</a>
                 </li>
             </ul>
         </div>

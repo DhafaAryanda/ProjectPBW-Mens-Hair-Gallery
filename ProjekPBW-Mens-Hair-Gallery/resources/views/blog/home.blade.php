@@ -64,47 +64,42 @@
     </div>
 
     <div id="hairstyle" class="container-fluid" style="padding-top: 50px; height: 850px; background-color: #565656">
-        <div class="container-fluid" style="text-align: center; padding-bottom: 100px">
+        <div class="container-fluid" style="text-align: center; padding-bottom: 40px">
             <span class="fs-4 fw-bold" style="color: #ffffff">Hairstyle</span>
             <span class="fs-4 fw-bold" style="color: #bc7100">Mens</span><br />
             <span class="fs-4 fw-bold" style="color: #bc7100">Hair</span>
             <span class="fs-4 fw-bold" style="color: #bc7100">Gallery</span>
         </div>
 
-        {{-- <div class="center">
-            <div class="card mb-5" style="background-color: #c4c4c4; max-width: 600px">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{ URL::asset('assets/images/french-crop-haircut-512.webp') }}"
-                            class="img-fluid rounded-start" alt="..." />
-                    </div>
-                    <div class="col-md-8">
+        <div class="row">
+            <div class="col">
+                @forelse ($posts as $post)
+                    <div class="card mb-4 mx-auto" style="width: 60rem;">
                         <div class="card-body">
-                            <h5 class="card-title">French Crop</h5>
-                            <p class="card-text">This is a wider card with supporting text below lorem20 as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    @if (file_exists(public_path($post->thumbnail)))
+                                        <img class="card-img-top" src="{{ asset($post->thumbnail) }}"
+                                            alt="{{ $post->title }}" style="width: 100%; height:15vw; object-fit:cover">
+                                    @else
+                                        <img class="img-fluid rounded" src="http://placehold.it/750x300"
+                                            alt="{{ $post->title }}">
+                                    @endif
+                                </div>
+                                <div class="col-lg-9 pl-4">
+                                    <h2 class="card-title">{{ $post->title }}</h2>
+                                    <p class="card-text">{{ $post->description }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @empty
+                    <h3 class="text-center text-light">
+                        No data posts
+                    </h3>
+                @endforelse
             </div>
-            <div class="card mb-5" style="background-color: #c4c4c4; max-width: 600px">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{ URL::asset('assets/images/mullet.jpg') }}" class="img-fluid rounded-start"
-                            alt="..." />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">French Crop</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+        </div>
         <div class="d-flex justify-content-center" style="margin-left: 40rem">
             <a class="btn rounded-pill btn-sm"
                 style="width: 8rem; background-color: #bc7100; color: white; text-align: center"
@@ -113,68 +108,51 @@
     </div>
 
     <div id="product" class="container-fluid" style="padding-top: 50px; height: 850px; background-color: #343434">
-        <div class="container-fluid" style="text-align: center; padding-bottom: 100px">
+        <div class="container-fluid" style="text-align: center; padding-bottom: 40px">
             <span class="fs-4 fw-bold" style="color: #ffffff">Product</span>
             <span class="fs-4 fw-bold" style="color: #bc7100">Mens</span><br />
             <span class="fs-4 fw-bold" style="color: #bc7100">Hair</span>
             <span class="fs-4 fw-bold" style="color: #bc7100">Gallery</span>
         </div>
-        <div class="container">
-            <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                <div class="col">
-                    <div class="card" style="width: 18rem; margin-bottom: 3rem">
-                        <img src="{{ URL::asset('assets/images/pomade1.jpg') }}" class="card-img-top" alt="..." />
+
+        <div class="row">
+            <div class="col">
+                @forelse ($products as $product)
+                    <div class="card mb-4 mx-auto" style="width: 60rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <a href="#" class="btn" style="background-color: #bc7100; color: white">Go
-                                somewhere</a>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    @if (file_exists(public_path($product->thumbnail)))
+                                        <img class="card-img-top" src="{{ asset($product->thumbnail) }}"
+                                            alt="{{ $product->title }}"
+                                            style="width: 100%; height:15vw; object-fit:cover">
+                                    @else
+                                        <img class="img-fluid rounded" src="http://placehold.it/750x300"
+                                            alt="{{ $product->title }}">
+                                    @endif
+                                </div>
+                                <div class="col-lg-9 pl-4">
+                                    <h5 class="card-title">{{ $product->title }}</h2>
+                                        <p class="card-text">{{ $product->description }}</p>
+                                        <p class="btn disabled"
+                                            style="background-color: darkgray; color: black;opacity:1">
+                                            @currency($product->price)
+                                        </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem; margin-bottom: 3rem">
-                        <img src="{{ URL::asset('assets/images/pomade1.jpg') }}" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <a href="#" class="btn" style="background-color: #bc7100; color: white">Go
-                                somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem; margin-bottom: 3rem">
-                        <img src="{{ URL::asset('assets/images/pomade1.jpg') }}" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <a href="#" class="btn" style="background-color: #bc7100; color: white">Go
-                                somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem; margin-bottom: 3rem">
-                        <img src="{{ URL::asset('assets/images/pomade1.jpg') }}" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's conten lorem20 t.</p>
-                            <a href="#" class="btn" style="background-color: #bc7100; color: white">Go
-                                somewhere</a>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                    <h3 class="text-center text-light">
+                        No data posts
+                    </h3>
+                @endforelse
             </div>
-            <div class="d-flex justify-content-center" style="margin-left: 70rem">
-                <a class="btn rounded-pill btn-sm"
-                    style="width: 8rem; background-color: #bc7100; color: white; text-align: center"
-                    href="{{ route('blog.product') }}" role="button">Selengkapnya</a>
-            </div>
+        </div>
+        <div class="d-flex justify-content-center" style="margin-left: 40rem">
+            <a class="btn rounded-pill btn-sm"
+                style="width: 8rem; background-color: #bc7100; color: white; text-align: center"
+                href="{{ route('blog.product') }}" role="button">Selengkapnya</a>
         </div>
     </div>
 
@@ -200,8 +178,8 @@
                             <a class="btn rounded-3 btn-sm "
                                 style="align-items:center ;justify-content:center ;display:flex; width: 15rem; height:3rem; background-color: #bc7100; color: white; text-align: center"
                                 href="#" role="button">
-                                <input type="image" src="{{ URL::asset('assets/images/logo.png') }}" alt="" height="20"
-                                    width="20" style=" margin-right: 5px" />
+                                <input type="image" src="{{ URL::asset('assets/images/whatsapp.png') }}" alt=""
+                                    height="20" width="20" style=" margin-right: 5px" />
                                 <span class="fw-bold">Hubungi kami</span>
                             </a>
                         </div>
@@ -209,9 +187,9 @@
                             <a class="btn rounded-3 btn-sm "
                                 style="align-items:center ;justify-content:center ;display:flex; width: 15rem; height:3rem; background-color: #bc7100; color: white; text-align: center"
                                 href="#" role="button">
-                                <input type="image" src="{{ URL::asset('assets/images/logo.png') }}" alt="" height="20"
+                                <input type="image" src="{{ URL::asset('assets/images/shopee.png') }}" alt="" height="20"
                                     width="20" style=" margin-right: 5px" />
-                                <span class="fw-bold">Hubungi kami</span>
+                                <span class="fw-bold">Mens Hair Gallery</span>
                             </a>
                         </div>
                     </div>

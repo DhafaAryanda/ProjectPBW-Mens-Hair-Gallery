@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/hair', [\App\Http\Controllers\HairstyleController::class, 'hairstyle'])->name('blog.hairstyle');
 Route::get('/produk', [\App\Http\Controllers\HairstyleController::class, 'product'])->name('blog.product');
+Route::get('/rekom', [\App\Http\Controllers\HairstyleController::class, 'rekomendasi'])->name('blog.rekomendasi');
 Route::get('/', [\App\Http\Controllers\HairstyleController::class, 'home'])->name('blog.home');
 
 Auth::routes([
