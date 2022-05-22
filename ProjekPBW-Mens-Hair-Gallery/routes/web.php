@@ -32,20 +32,3 @@ Route::group(['prefix' => 'dashboard', ' middleware' => ['web', 'auth']], functi
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
 });
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/product', function () {
-    return view('product');
-});
-
-Route::get('/hairstyle', function () {
-    return view('hairstyle');
-});
-
-
-Route::get('/rekomendasi', function () {
-    return view('rekomendasi');
-});

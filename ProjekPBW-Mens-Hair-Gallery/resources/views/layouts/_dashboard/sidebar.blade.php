@@ -24,31 +24,5 @@
                 </div>
                 Product
             </a>
-            <div class="sb-sidenav-menu-heading">User permission</div>
-            <a class="nav-link" href="#">
-                <div class="sb-nav-link-icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                User
-            </a>
-            <a class="nav-link" href="#">
-                <div class="sb-nav-link-icon">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                Role
-            </a>
-            <div class="sb-sidenav-menu-heading">Settings</div>
-            <a class="nav-link" href="#">
-                <div class="sb-nav-link-icon">
-                    <i class="fas fa-photo-video"></i>
-                </div>
-                File manager
-            </a>
         </div>
-    </div>
-    <div class="sb-sidenav-footer">
-        <div class="small">Logged in as:</div>
-        <!-- show username -->
-        {{ Auth::user()->name }}
-    </div>
 </nav>
