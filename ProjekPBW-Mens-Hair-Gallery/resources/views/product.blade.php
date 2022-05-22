@@ -7,13 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!--My CSS-->
-    <link rel="stylesheet" href="{{ URL::asset('assets/images/style.css')}}"> />
+    <link rel="stylesheet" href="{{ URL::asset('assets/images/style.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/styles/profil_laboran.css')}}">
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="padding-left: 6rem">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow" style="background:#356623; padding-left:6rem;">
+      <div class="container-fluid" style="background-color:#356623;>
         <a class="navbar-brand" href="{{ URL('/home')}}">
           <img src="{{ URL::asset('assets/images/logo.png') }}" alt="" height="50" width="50" />
         </a>
@@ -30,7 +30,7 @@
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link" href="#">Hairstyle</a>
+              <a class="nav-link" href="{{ URL('/hairstyle')}}">Hairstyle</a>
             </li>
             <li class="nav-item me-3">
               <a class="nav-link" href="#">Product</a>
@@ -38,8 +38,11 @@
             <li class="nav-item me-3">
               <a class="nav-link" href="#">Contact</a>
             </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="{{ URL('/rekomendasi')}}">Rekomendasi</a>
+            </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0 d-flex justify-content-end position-absolute top-50 end-0 translate-middle-y">
+          <form class="form-inline my-2 my-lg-0 d-flex justify-content-end position-absolute top-50 end-0 translate-middle-y" style="margin-right:6rem">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
