@@ -5,7 +5,7 @@
 @endsection
 
 @section('breadcrumbs')
-    {{-- {{ Breadcrumbs::render('add_post') }} --}}
+    {{ Breadcrumbs::render('add_product') }}
 @endsection
 
 @section('content')

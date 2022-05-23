@@ -5,7 +5,7 @@
 @endsection
 
 @section('breadcrumbs')
-    {{-- {{ Breadcrumbs::render('posts') }} --}}
+    {{ Breadcrumbs::render('products') }}
 @endsection
 
 @section('content')
@@ -68,7 +68,7 @@
                                         {{ $product->description }}
                                     </p>
                                     <p>
-                                        {{ $product->price }}
+                                        @currency($product->price)
                                     </p>
                                     <div class="float-right">
                                         <!-- detail -->

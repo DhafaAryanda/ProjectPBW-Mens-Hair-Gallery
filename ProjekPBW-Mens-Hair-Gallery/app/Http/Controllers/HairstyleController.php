@@ -22,4 +22,17 @@ class HairstyleController extends Controller
             'products' => Product::publish()->latest()->paginate()
         ]);
     }
+
+    public function home()
+    {
+        return view('blog.home', [
+            'posts' => Post::publish()->latest()->paginate(2),
+            'products' => Product::publish()->latest()->paginate(2)
+        ]);
+    }
+
+    public function rekomendasi()
+    {
+        return view('blog.rekomendasi');
+    }
 }
